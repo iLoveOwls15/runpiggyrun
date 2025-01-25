@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://dig45c6wfbx3k"]
+
+[ext_resource type="Texture2D" uid="uid://b03uu2v6usxgq" path="res://ASSETS/images/pxArt-Recovered.png" id="1_01y5k"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2raf2"]
+[ext_resource type="AudioStream" uid="uid://438j022xxiwq" path="res://sounds/background_music.wav" id="3_avo3t"]
+
+[sub_resource type="SystemFont" id="SystemFont_2ei5c"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_0q82g"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_6l0pd"]
+font_names = PackedStringArray("Impact")
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2raf2")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_01y5k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="button_options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_2ei5c")
+text = "OPTIONS"
+
+[node name="button_play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/button_options"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -44.0
+offset_right = 59.0
+offset_bottom = -13.0
+theme_override_fonts/font = SubResource("SystemFont_0q82g")
+text = "PLAY"
+
+[node name="button_quit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/button_options/button_play"]
+layout_mode = 0
+offset_top = 87.0
+offset_right = 56.0
+offset_bottom = 118.0
+theme_override_fonts/font = SubResource("SystemFont_6l0pd")
+text = "QUIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_avo3t")
+volume_db = -28.463
+autoplay = true
