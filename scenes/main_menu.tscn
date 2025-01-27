@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dig45c6wfbx3k"]
 
-[ext_resource type="Texture2D" uid="uid://b03uu2v6usxgq" path="res://ASSETS/images/pxArt-Recovered.png" id="1_01y5k"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_2raf2"]
+[ext_resource type="Texture2D" uid="uid://dmfwihawbwxea" path="res://ASSETS/images/updated main menu.png" id="2_6o48w"]
 [ext_resource type="AudioStream" uid="uid://438j022xxiwq" path="res://sounds/background_music.wav" id="3_avo3t"]
 
 [sub_resource type="SystemFont" id="SystemFont_2ei5c"]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_01y5k")
+texture = ExtResource("2_6o48w")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://3jqexntmgdue"]
+[gd_scene load_steps=15 format=4 uid="uid://3jqexntmgdue"]
 
 [ext_resource type="PackedScene" uid="uid://dsw5vowt8f2nt" path="res://player.tscn" id="1_fahax"]
+[ext_resource type="Script" path="res://root.gd" id="1_hy1s2"]
 [ext_resource type="PackedScene" uid="uid://bwu8sd0cdi8sg" path="res://scenes/platform.tscn" id="3_s1qxw"]
 [ext_resource type="Texture2D" uid="uid://db3ayb63i38ke" path="res://ASSETS/blocks/Tilemap/tilemap_packed.png" id="3_vq0u0"]
-[ext_resource type="AudioStream" uid="uid://df3mfmiepxhdq" path="res://sounds/johnpork.wav" id="5_qmyhc"]
+[ext_resource type="PackedScene" uid="uid://bgjjwcp6k7wfp" path="res://scenes/bacgkround_music.tscn" id="5_qxxdo"]
 [ext_resource type="PackedScene" uid="uid://dqiutf0ddc1ow" path="res://scenes/killzone.tscn" id="5_rl35a"]
 
 [sub_resource type="Animation" id="Animation_5i8lx"]
@@ -288,6 +289,7 @@ sources/0 = SubResource("TileSetAtlasSource_vd6or")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_qi6xf"]
 
 [node name="root" type="Node2D"]
+script = ExtResource("1_hy1s2")
 
 [node name="player" parent="." instance=ExtResource("1_fahax")]
 position = Vector2(-3, 4)
@@ -328,7 +330,4 @@ position = Vector2(7, 129)
 position = Vector2(156, -68)
 shape = SubResource("WorldBoundaryShape2D_qi6xf")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_qmyhc")
-volume_db = -28.463
-autoplay = true
+[node name="lore_music" parent="." instance=ExtResource("5_qxxdo")]

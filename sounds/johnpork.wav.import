@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://df3mfmiepxhdq"
-path="res://.godot/imported/John Pork Documentary.wav-20b14c76d9d199c648fc44fce950fd54.sample"
+path="res://.godot/imported/johnpork.wav-a720750947b0af142904953dbe0f213a.sample"
 
 [deps]
 
-source_file="res://sounds/John Pork Documentary.wav"
-dest_files=["res://.godot/imported/John Pork Documentary.wav-20b14c76d9d199c648fc44fce950fd54.sample"]
+source_file="res://sounds/johnpork.wav"
+dest_files=["res://.godot/imported/johnpork.wav-a720750947b0af142904953dbe0f213a.sample"]
 
 [params]
 

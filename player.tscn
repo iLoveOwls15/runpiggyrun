@@ -204,3 +204,5 @@ shape = SubResource("RectangleShape2D_5pdcf")
 [node name="coyote_timer" type="Timer" parent="."]
 wait_time = 0.11
 one_shot = true
+
+[connection signal="ready" from="coyote_timer" to="." method="_on_coyote_timer_ready"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://o6iwittume37"]
+
+[ext_resource type="Script" path="res://scenes/level_box.gd" id="1_b01ql"]
+[ext_resource type="Texture2D" uid="uid://35kg4wm05xan" path="res://ASSETS/level screen stuff/Level/Button/Locked/Default@2x.png" id="1_fn4of"]
+
+[node name="LevelBox" type="PanelContainer"]
+custom_minimum_size = Vector2(110, 110)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_b01ql")
+locked = false
+level_num = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "#"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+
+[node name="Lock" type="TextureRect" parent="MarginContainer"]
+layout_mode = 2
+texture = ExtResource("1_fn4of")
