@@ -1,0 +1,113 @@
+[gd_scene load_steps=17 format=3 uid="uid://b052ad0lk3pvp"]
+
+[ext_resource type="Texture2D" uid="uid://0p6krj8kle65" path="res://ASSETS/interactables/shit.png" id="1_4mb63"]
+[ext_resource type="PackedScene" uid="uid://dqiutf0ddc1ow" path="res://scenes/killzone.tscn" id="2_h1nqd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4a0j"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mi2g"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai5lg"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjewd"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jfgn"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k34br"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jjg7"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh1cc"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_placs"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd43e"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n268v"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8qqu"]
+atlas = ExtResource("1_4mb63")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jt30a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4a0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mi2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai5lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjewd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jfgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k34br")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jjg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh1cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_placs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd43e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n268v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8qqu")
+}],
+"loop": true,
+"name": &"spinny",
+"speed": 24.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50b5d"]
+radius = 17.0
+
+[node name="spinny_blade" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jt30a")
+animation = &"spinny"
+autoplay = "spinny"
+frame_progress = 0.662786
+
+[node name="Killzone" parent="." instance=ExtResource("2_h1nqd")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_50b5d")

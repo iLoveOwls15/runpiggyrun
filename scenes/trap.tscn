@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://kj2e8qwugqrj"]
+
+[ext_resource type="Script" path="res://scenes/trap.gd" id="1_6cgtw"]
+[ext_resource type="Texture2D" uid="uid://cyhl430tk3qpw" path="res://ASSETS/interactables/bear_trap.png" id="1_tpocd"]
+[ext_resource type="PackedScene" uid="uid://dqiutf0ddc1ow" path="res://scenes/killzone.tscn" id="2_6w5hi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8axa"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8m2t"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bw3e"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qismd"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiypb"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfmcl"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pl2uj"]
+atlas = ExtResource("1_tpocd")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfgqg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8axa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8m2t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bw3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qismd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiypb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfmcl")
+}],
+"loop": true,
+"name": &"trap_activate",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pl2uj")
+}],
+"loop": true,
+"name": &"trap_idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e87vc"]
+
+[node name="trap" type="Node2D"]
+script = ExtResource("1_6cgtw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yfgqg")
+animation = &"trap_idle"
+
+[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_6w5hi")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+shape = SubResource("RectangleShape2D_e87vc")
