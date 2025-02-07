@@ -5,7 +5,7 @@ class_name main_menu
 @onready var button_play: Button = $MarginContainer/HBoxContainer/VBoxContainer/button_options/button_play as Button
 @onready var button_options: Button = $MarginContainer/HBoxContainer/VBoxContainer/button_options as Button
 @onready var button_quit: Button = $MarginContainer/HBoxContainer/VBoxContainer/button_options/button_play/button_quit as Button
-@onready var root = preload("res://root.tscn") as PackedScene
+@onready var root = preload("res://scenes/root.tscn") as PackedScene
 
 
 

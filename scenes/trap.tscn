@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://kj2e8qwugqrj"]
 
-[ext_resource type="Script" path="res://scenes/trap.gd" id="1_6cgtw"]
+[ext_resource type="Script" path="res://scripts/trap.gd" id="1_6cgtw"]
 [ext_resource type="Texture2D" uid="uid://cyhl430tk3qpw" path="res://ASSETS/interactables/bear_trap.png" id="1_tpocd"]
 [ext_resource type="PackedScene" uid="uid://dqiutf0ddc1ow" path="res://scenes/killzone.tscn" id="2_6w5hi"]
 
@@ -73,7 +73,8 @@ script = ExtResource("1_6cgtw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yfgqg")
-animation = &"trap_idle"
+animation = &"trap_activate"
+frame_progress = 0.0587266
 
 [node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_6w5hi")]
 

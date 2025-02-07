@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhaiiqatuog6"]
+
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_a4t4l"]
+[ext_resource type="Shader" path="res://pause_menu.gdshader" id="2_vsvfo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gvvsk"]
+shader = ExtResource("2_vsvfo")
+
+[sub_resource type="SystemFont" id="SystemFont_dxmqw"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_3wfo3"]
+font_names = PackedStringArray("Impact")
+
+[sub_resource type="SystemFont" id="SystemFont_cpuyn"]
+font_names = PackedStringArray("Impact")
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 42.0
+script = ExtResource("1_a4t4l")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gvvsk")
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 646.0
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 0
+offset_left = 548.0
+offset_top = 265.0
+offset_right = 748.0
+offset_bottom = 382.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_dxmqw")
+text = "Resume"
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_3wfo3")
+text = "Restart"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_cpuyn")
+text = "Quit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
