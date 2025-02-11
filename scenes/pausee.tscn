@@ -4,15 +4,19 @@
 
 [sub_resource type="SystemFont" id="SystemFont_4k82m"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_mjvdr"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_f8pva"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_xo2ww"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="pausee" type="Control"]
 process_mode = 3
@@ -71,5 +75,6 @@ theme_override_fonts/font = SubResource("SystemFont_xo2ww")
 text = "QUIT"
 
 [connection signal="pressed" from="GridContainer/resume_button" to="." method="_on_resume_button_pressed"]
+[connection signal="button_down" from="GridContainer/SETTINGS" to="." method="_on_settings_button_down"]
 [connection signal="pressed" from="GridContainer/SETTINGS" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="GridContainer/QUIT" to="." method="_on_quit_pressed"]

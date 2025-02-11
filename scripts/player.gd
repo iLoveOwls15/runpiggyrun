@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 	
 	# Handle animations in proper order
 	if not is_on_floor():
+		if direction == 0:  #check with others about this change
+			velocity.x = move_toward(velocity.x, 0, SPEED) #
 		if $AnimatedSprite2D.animation != "jump":
 			$AnimatedSprite2D.play("jump")
 	elif direction != 0:
@@ -52,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if $AnimatedSprite2D.animation != "trash_idle":
 			$AnimatedSprite2D.play("trash_idle")
+		
 
 	move_and_slide()
 
