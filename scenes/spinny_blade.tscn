@@ -96,7 +96,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50b5d"]
-radius = 17.0
+radius = 16.0312
 
 [node name="spinny_blade" type="Node2D"]
 
@@ -109,5 +109,5 @@ frame_progress = 0.662786
 [node name="Killzone" parent="." instance=ExtResource("2_h1nqd")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-1, 1)
+position = Vector2(-1, -1)
 shape = SubResource("CircleShape2D_50b5d")
